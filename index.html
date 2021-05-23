@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Screen as Light Source</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="Use your screen as light source with specific color.">
+  	<meta name="keywords" content="screen, color, light">
+		<meta name="author" content="Dares Core d.o.o., https://dares.co">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	</head>
+	<body>
+			<div id="control" style="text-align: center; background-color: rgba(255, 255, 255, 0.3); border: 1px solid gray; padding: 5px 5px 5px 5px; border-radius:10px; width:fit-content; width:-webkit-fit-content; width:-moz-fit-content; margin: 0 auto">
+				<button class="btn" onclick="changeColor('#ffffff')">White</button>
+				<button onclick="changeColor('#ff0000')">Red</button>
+				<button onclick="changeColor('#0000ff')">Blue</button>
+				<button onclick="changeColor('#00ff00')">Green</button>
+				<button onclick="changeColor('#FFC0CB')">Pink</button>
+				<button onclick="changeColor('#FFFF00')">Yellow</button>
+				<button onclick="changeColor('#800080')">Purple</button>
+				</br>
+					<label for="favcolor">Pick color:</label>
+  				<input type="color" id="favcolor" name="favcolor" value="#ff0000" style="border: 1px solid gray;border-radius:5px">
+			</div>
+
+			<script>
+			var theInput = document.getElementById("favcolor");
+   		var theColor = theInput.value;
+   		theInput.addEventListener("input", function() {
+				changeColor(document.getElementById("favcolor").value)
+			}, false);
+
+			function changeColor(color) {
+          document.body.style.background = color;
+					document.getElementById("favcolor").value = color;
+      }
+			</script>
+	</body>
+</html>
